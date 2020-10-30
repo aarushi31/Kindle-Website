@@ -1,0 +1,654 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- MDB icon -->
+    <link rel="icon" href="img/mdb-favicon.ico" type="image/x-icon">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Assistant&display=swap" rel="stylesheet">
+    <title>Kindle_Knack</title>
+    <style>
+        *
+        {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            text-decoration: none;
+            list-style: none;
+            user-select: none;
+            font-family: 'Assistant', sans-serif;
+        }
+        body
+        {
+            background-size: cover;
+            background-image: url("bg3.svg");
+            background-repeat: repeat;
+            height: calc(100vh);
+            font-family: montserrat;
+        }
+        /* nav  for full screen nav background
+        {
+            background: black;
+            height: 80px;
+            width: 100%;
+        } */
+        label.logo
+        {
+            color: white;
+            font-size: 35px;
+            line-height: 80px;
+            padding: 0 100px;
+            font-weight: bold;
+        
+        }
+        nav ul
+        {
+            float: right;
+            margin-right: 20px;
+            font-family: sans-serif;
+            font-weight: bold;
+        }
+        nav ul li
+        {
+            display: inline-block;
+            line-height: 80px;
+            margin: 0 5px;
+        }
+        nav ul li a
+        {
+            color: grey;
+            font-size: 17px;
+            padding: 7px 13px;
+            border-radius: 3px;
+        }
+        a.active
+        {
+            background: grey;
+            color:white;
+        }
+        a:hover
+        {
+            color: rgb(6, 223, 42);
+            transition: 0.6s ease;
+        }
+        .content
+        {
+            text-align: center;
+            margin-top: 25vh;
+        }
+        .Name
+        {
+            font-family: sans-serif;
+            font-style: normal;
+            font-weight: bold;
+            font-size: 50px;
+            color: white;
+            -webkit-text-stroke-width: 2px;
+            -webkit-text-stroke-color: #243665;
+        }
+        .Slogan
+        {
+            font-family: "Snell Roundhand", cursive;
+            font-size: 40px;
+            color:#243665;
+        }
+        input[type=submit]
+        {
+            color: white;
+            font-size: 20px;
+            border-radius: 20px;
+            padding-top: 8px;
+            padding-bottom: 8px;
+            padding-right: 30px;
+            padding-left: 30px;
+            background-color: black
+        }
+        input[type=submit]:hover
+        {
+                border: 3px solid  black;
+                background-color: grey;
+                color: white;
+        }
+        .checkbtn
+            {
+                color: white;
+                text-align: right;
+                height: 60px;
+                font-size: 30px;
+                line-height: 80px;
+                margin-right: 40px;
+                float: right;
+                display: none;
+                cursor: pointer;
+        }
+        #check
+        {
+          display: none;
+        }
+        @media screen and (max-width: 952px)
+            {
+                label.logo
+                {
+                    font-size: 30px;
+                    padding-left: 50px;
+                }
+                nav ul li a
+                {
+                    font-size: 16px;
+                }
+            }
+            @media screen and (max-width: 858px)
+            {
+                /* nav for minimised screen nav background
+                {
+                    background: black;
+                    height: 80px;
+                    width: 100%;
+                } */
+                .checkbtn
+                {
+                    display: block;
+                    animation: anime 5s linear infinite;
+                }
+                @keyframes anime
+                {
+                    0%
+                    {
+                        color: orange;
+                    }
+                    50%
+                    {
+                        color: white;
+                        
+                    }
+                    100%
+                    {
+                    color: rgb(6, 223, 42);
+                    }
+                }
+                ul
+                {
+                    position: fixed;
+                    width: 100%;
+                    height: 100vh;
+                    background-color: black;
+                    /* top: 80px; for removing the top bg & giving it to full screen at once */
+                    left: -100%;
+                    text-align: center;
+                    transition: all 0.5s;
+                }
+                nav ul li
+                {
+                    display: block;
+                    margin: 50px 0;
+                    line-height: 30px;
+                }
+                nav ul li a
+                {
+                    font-size: 20px;
+                }
+                a:hover
+                {
+                    color:  rgb(6, 223, 42);
+                }
+                #check:checked ~ ul
+                {
+                  left: 0;
+                }
+            }
+            
+            .kindle {
+                
+                color: navy;
+                text-align: center;
+                height: 50px;
+                padding: 50px;
+
+  
+              }
+              .welcome{
+                text-align: center;
+               
+                
+              }
+              .kindle h1{
+                text-align: center;
+                font-family: 'Roboto', sans-serif;
+                position:absolute;
+                top:6%;
+              }
+              .kindle span{
+                color:orange;
+              }
+              
+              .about {
+               
+                z-index:2;
+              }
+              
+              .astronomy {
+                  padding-left: 20px;
+              }
+              
+              .heading1 {
+                padding-left: 40px;
+                font-size: 30px;
+                color: navy;
+                padding-top: 0px;
+                padding-bottom: 0px;
+              }            
+              
+              
+              
+              img {
+                padding-left: 30px;
+                padding-bottom: 0px;
+              }
+              
+              .main {
+                padding-top: 100px;
+                display: flex;
+              }
+              
+              .music {
+                padding-left: 40px;
+                
+              }
+              
+              .heading2 {
+                padding-left: 50px;
+                font-size: 30px;
+                color: orange;
+                padding-top: 0px;
+                padding-bottom: 0px;
+              }     
+              
+              
+              .graphic {
+                padding-left: 80px;
+                
+              }
+              
+              .heading3 {
+                padding-left: 20px;
+                font-size: 30px;
+                color: navy;
+                padding-top: 0px;
+                padding-bottom: 0px;
+              }     
+              
+              .photography {
+                padding-left: 20px;
+                
+              }
+              
+              .heading4 {
+                padding-left: 20px;
+                font-size: 30px;
+                color: orange;
+                padding-top: 0px;
+                padding-bottom: 0px;
+              }  
+              
+              .editing {
+                padding-left: 100px;
+                
+              }
+              
+              .heading5 {
+                padding-left: 40px;
+                font-size: 30px;
+                color: navy;
+                padding-top: 0px;
+                padding-bottom: 0px;
+              }  
+                
+              .coding {
+                padding-left: 150px;
+                
+              }
+              
+              .heading6 {
+                padding-left: 40px;
+                font-size: 30px;
+                color: orange;
+                padding-top: 0px;
+                padding-bottom: 0px;
+              }  
+              
+              .blogging {
+                padding-left: 20px;
+                
+              }
+              
+              .heading7 {
+                padding-left: 40px;
+                font-size: 30px;
+                color: navy;
+                padding-top: 0px;
+                padding-bottom: 0px;
+              }  
+              .debate {
+                padding-left: 90px;
+                
+              }
+              
+              .heading8 {
+                padding-left: 40px;
+                font-size: 30px;
+                color: orange;
+                padding-top: 0px;
+                padding-bottom: 0px;
+              }  
+              .acting {
+                padding-left: 140px;
+                
+              }
+              
+              .heading9 {
+                padding-left: 40px;
+                font-size: 30px;
+                color: navy;
+                padding-top: 0px;
+                padding-bottom: 0px;
+              }  
+              .modelling {
+                padding-left: 40px;
+                
+              }
+              
+              .heading10 {
+                padding-left: 20px;
+                font-size: 30px;
+                color: orange;
+                padding-top: 0px;
+                padding-bottom: 0px;
+              }  
+              .art {
+                padding-left: 120px;
+                
+              }
+              
+              .heading11 {
+                padding-left: 20px;
+                font-size: 30px;
+                color: navy;
+                padding-top: 0px;
+                padding-bottom: 0px;
+              }  
+              
+              .dance {
+                padding-left: 140px;
+                
+              }
+              
+              .heading12 {
+                padding-left: 20px;
+                font-size: 30px;
+                color:orange;
+                padding-top: 0px;
+                padding-bottom: 0px;
+              }  
+
+              .digital {
+                padding-top: 100px;
+                padding-right: 30px;
+                padding-bottom: 100px;
+                
+              }
+              
+              .heading13 {
+                padding-left: 20px;
+                font-size: 30px;
+                color: navy;
+                padding-top: 0px;
+                padding-bottom: 0px;
+              }  
+              
+              
+            p {
+                padding-left: 20px;
+                padding-right: 20px;
+            } 
+
+@media (max-width: 1000px)
+{
+    .main {
+        flex-wrap: wrap;
+    }
+}
+
+@media (max-width: 670px)
+{
+    .main {
+        flex-direction: column;
+        margin: 0 auto;
+    }
+    .astronomy {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+    
+    .music {
+        padding-left: 20px;
+        padding-right: 20px;
+        padding-top: 100px;
+    }
+    .graphic {
+        padding-left: 20px;
+        padding-right: 20px;
+        padding-top: 100px;
+    }
+    .photography {
+        padding-left: 20px;
+        padding-right: 20px;
+        
+    }
+
+    .editing {
+        padding-left: 20px;
+        padding-right: 20px;
+        padding-top: 100px;
+    }
+
+    .coding {
+        padding-left: 20px;
+        padding-right: 20px;
+        padding-top: 100px;
+    }
+
+    .blogging {
+        padding-left: 20px;
+        padding-right: 20px;
+        
+    }
+
+    .debate {
+        padding-left: 20px;
+        padding-right: 20px;
+        padding-top: 100px;
+    }
+
+    .acting {
+        padding-left: 20px;
+        padding-right: 20px;
+        padding-top: 100px;
+    }
+
+    .modelling {
+        padding-left: 20px;
+        padding-right: 20px;
+        
+    }
+    
+    .art {
+        padding-left: 20px;
+        padding-right: 20px;
+        padding-top: 100px;
+    }
+    .dance {
+        padding-left: 20px;
+        padding-right: 20px;
+        padding-top: 100px;
+    }
+
+    .digital {
+        padding-left: 20px;
+        padding-right: 20px;
+        
+    }
+    .blob{
+      position: absolute;
+      top:-5%;
+      width: 1489px;
+      height: 196.33px;
+      z-index:-2;
+      background: rgba(216, 215, 254, 0.63);
+    }
+    
+
+}
+
+
+
+
+        </style>
+</head>
+<body>
+    <nav>
+      <input type="checkbox" id = "check">
+      <label for = "check" class="checkbtn">
+        <i class="fas fa-bars"></i>
+      </label>
+        <!-- <label class = "logo">KINDLE</label> -->
+        
+        <ul>
+            <li><a  href="./index.html" >HOME</a></li>
+            <li><a class = "active" href="./about.html" >TEAM</a></li>
+            <li><a href="./new.html" >EVENTS</a></li>
+            <li><a href="./contact.html" >CONTACT</a></li>
+        </ul>
+        <!-- <div class = "content">
+            <p class = "Name"> KINDLE </p>
+            <br>
+            <br>
+            <p class = "Slogan"> More the variety, better the society </p>
+            <br>
+            <form action="Loginbeautiful.htm">
+            <input type = "submit" id = "submit" value = "Register">
+            </form> -->
+            
+        </div>
+    </nav>
+    
+    <main class="about">
+  <header class="kindle"><h1>Kindle<span>_</span>Knack</h1></header> 
+  <h2 class="welcome">We welcome every variety with open arms! Every talent is graced here, because we believe that everyone's special in their own very way.</h2>
+  <h3 class="welcome">Clubs in our society :</h3>
+ <center> <div class="main">
+    <div class="astronomy">
+      <img width="200px" height="150px" src="https://i.imgur.com/moRWF41.png">
+      <p class="heading1"><strong>Astronomy</strong></p>
+      <p>It's for those who somehow wants to immerse<br> themselves in all that grandeur of space<br> and who wants
+        to be gripped by the splendor<br> of the universe. If yes,<br> here is an immense opportunity to have<br> a space walk.
+        We have got SPACE for<br> everyone. Kindly do register.</p>
+    </div>
+      <div class="music">
+      <img width="150px" height="150px" src="https://i.imgur.com/g6kaOuW.jpg">
+        <p class="heading2"><strong>Music</strong></p>
+      <p>Are you a music junkie with tunes constantly<br> playing in your head? Looking for an <br>opportunity to get better and
+        showcase your hidden talent? <br>KINDLE is here to give you the opportunity to<br> collaborate with like-minded people, 
+        create and<br> promote your own music videos.</p>
+    </div>
+  <div class="graphic desigining">
+      <img width="200px" height="150px" src="https://i.imgur.com/s3QQDNH.jpg">
+    <p class="heading3"><strong>Graphic Designing</strong></p>
+      <p>Are you familiar with the process of visual<br> communication or want to develop a new skill? <br>KINDLE is here to help 
+      you create visual concepts<br> using software or by hand, to communicate<br> ideas that inspire, inform and captivate<br> the viewers.
+        Please do register to participate <br>in our workshops and quizzes.</p>
+    </div>
+  </div><center>
+  
+  
+  
+  <center><div class="main">
+    <div class="photography">
+      <img width="200px" height="150px" src="https://i.imgur.com/SbRYLEC.jpg">
+      <p class="heading4"><strong>Photography</strong></p>
+      <p>Walking the streets with camera in hand<br> is akin to being on a treasure hunt as a child.<br> Photographers use their technical 
+        expertise<br> creativity and composition skills to produce<br> and preserve images that tell a story<br> or record an event.
+        Are you a story teller?</p>
+    </div>
+      <div class="editing">
+      <img width="200px" height="150px" src="https://i.imgur.com/5PZsPhf.jpg">
+        <p class="heading5"><strong>Editing</strong></p>
+      <p>Do you want to show case your editorial<br> skills?Do you think you can turn a lifeless<br> picture to a picture full of life and 
+      passion.<br> If yes then this is the perfect place<br> for you to explore the vast multitude of <br>opportunities available in this arena
+        and <br>get a chance to showcase your talent like<br> never before.</p>
+    </div>
+  <div class="coding">
+      <img width="200px" height="150px" src="https://i.imgur.com/7k030Vo.jpg">
+    <p class="heading6"><strong>Coding</strong></p>
+      <p>Do you love coding and want to assess<br> yourself?Register here in KINDLE<br> and participate in various competitions,<br> quizzes and 
+        other exciting projects and<br> further develop your skills!</p>
+    </div>
+    </div></center>
+  <center><div class="main">
+      <div class="blogging">
+          <img width="200px" height="150px" src="https://i.imgur.com/cAA5UvQ.jpg">
+          <p class="heading7"><strong>Blogging</strong></p>
+          <p>Are you interested in technical projects and<br> want to share your knowledge with<br> others? KINDLE is giving you the opportunity<br>
+             to show off your knowledge and<br> writing skills. Get a chance to learn<br> about the latest technology and <br>keep people around you updated.</p>
+      </div>
+      <div class="debate">
+        <img width="200px" height="150px" src="https://i.imgur.com/Tf3h32x.png">
+        <p class="heading8"><strong>Debate</strong></p>
+        <p>Want to show off your general knowledge<br> and oratory skills? Do you think<br> you are shy and need to develop<br> skills for public interaction?<br>
+             Register here to be a part of our<br> debate club in KINDLE. This will<br> not only enhance your oratory skills<br> but also give you immense knowledge on <br>
+             politics, human rights, history, scientific<br> policy,etc.
+        </p>
+    </div>
+    <div class="acting">
+        <img width="200px" height="150px" src="https://i.imgur.com/k8s5bYk.jpg">
+        <p class="heading9"><strong>Acting</strong></p>
+        <p>Want to make others aware about the<br> hidden artist inside you? We are<br> going to give you online opportunities<br> for workshops on theatre and stage acting.<br>
+             Register here at KINDLE and get the<br> chance to build the inner you!
+
+        </p>
+    </div>
+  </div></center>
+
+  <center><div class="main">
+    <div class="modelling">
+        <img width="200px" height="150px" src="https://i.imgur.com/gmYyw1Z.jpg">
+        <p class="heading10"><strong>Modelling</strong></p>
+        <p>Want to enhance ur skills on modelling?<br> Watched fashion models??? We'll help<br> you to learn and to give you <br>are best shot. Just register on <br>KINDLE and get a chance to show up<br> to modelling skills inside you.</p>
+    </div>
+    <div class="art">
+      <img width="200px" height="150px" src="https://i.imgur.com/SWe9qcU.jpg">
+      <p class="heading11"><strong>Art</strong></p>
+      <p>Are you a painting enthusiast who dreams<br> of painting all the time? Now it's<br> time to paint the canvas of your life<br> with the bright colors of your dreams.<br> We, at KINDLE give you plethora of <br>opportunities to flaunt your painting skills <br>
+        and to discover a whole new range<br> of art styles !!
+    </p>
+  </div>
+  <div class="dance">
+      <img width="200px" height="150px" src="https://i.imgur.com/bxjhU2c.jpg">
+      <p class="heading12"><strong>Dance</strong></p>
+      <p>Are you among those exuberant folks<br> whose feet tune with every beat of<br> music? Or one of those who calm their<br> souls with pacifying moves? Whatever<br> be the case, we at KINDLE,<br> celebrate this crazy love for dance<br> and provide you 
+        platform to parade your<br> gorgeous moves.</p>
+  </div>
+</div></center>
+
+<center>
+    <div class="digital">
+        <img width="200px" height="150px" src="https://i.imgur.com/Z2snkOE.jpg">
+        <p class="heading13"><strong>Digital Marketing</strong></p>
+        <p>Do you want to utilize your leisure time<br> and opportunities available online to do<br> something constructive? Confused about<br> where to start from? We are <br>here to help you learn more about digital <br>marketing and public relations management.<br>
+             Get ready to effectively communicate with<br> and captivate the audience with your<br> ideas and skills.</p>
+</div></center>
+</main>
+</body>
+</html>
